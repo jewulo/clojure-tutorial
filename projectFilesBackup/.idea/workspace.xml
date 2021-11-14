@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8028bac0-3cea-496c-930a-4584d0bfd57b" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Clojure Namespace" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1bffQEjhZ7udposLLupzlNyyk6s" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="ReplState" timestamp="1592515107801">{:repl-history {:ide [], :local [{:command &quot;;; keywords start with : (they can be defined by programmers)\n:keyword\n:nextkey\n;; lists\n(list 1 2 3)\n'(1 2 3)\n[1 2 3]\n;; maps/associated lists\n{:foo 1 :bar 2}\n(keys {:foo 1 :bar 2})\n(vals {:foo 1 :bar 2})\n; function invoke\n(+ 1 2)\n(+ 1 2 3 4 5 6)\n;; symbols\n'foo+bar\n'foo&amp;bar\n'foo!\n'&lt;foo&gt;\n;; function literals\n#(+ % 5)\n(#(+ % 5) 3)\n;; conditionals\n(if true :true :false)\n(if false :true :false)\n(range 5)\n(range 1 5)\n(inc 7)\n(dec 7)\n(range 10)\n;; map filter reduce\n;; map\n(map inc (range 10))\n(map #(+ % 1) (range 10))\n(map + (range 10) (range 10))\n(map + (range 10) (range 10) (range 10))\n;; filter\n(filter even? (range 10))\n;; reduce\n(reduce + 0 (range 10))\n;; let block\n(let [a 1\n      b 2]\n  (+ a b))\n(let [a 1\n      b (+ a 1)]\n  (+ a b))\n(let [square #(* % %)\n      nonneg-ints (range)\n      squares (map square nonneg-ints)\n      odd-squares (filter odd? squares)\n      first-10 (take 10 odd-squares)\n      sum (reduce + 0 first-10)]\n  sum)\n;; using the treading macro -&gt;&gt;\n; also called tread last macro -&gt;&gt;\n; or called a transducer\n(-&gt;&gt; (range)\n     (map #(* % %))\n     (filter odd?)\n     (take 10)\n     (reduce + 0))\n;; definitions\n(def v [1 2 3])\nv\n(def square #(* % %))\n(square 5)\n(def square (fn [x] (* x x)))\n(square 5)\n(defn square [x] (* x x))\n(square 5)\n;; immutability\n(conj v 4)\nv\n(def hm {:foo 1 :bar 2}) ; hm is a harsh-map of keys and values\nhm\n(assoc hm :baz 3)\nhm\n(dissoc hm :bar 2)\nhm\n(update hm :bar inc)\nhm\n; a harsh-map can be invoked like a function. its parameters are its keywords\n(hm :foo)\n(hm :bar)\n(map hm [:foo :bar])\n; keywords can also be invoked as a function. its parameter is its harsh-map\n(:foo hm)\n(:bar hm)\n; harsh-map in let block\n(let [jeff {:name \&quot;Jeff\&quot; :age 37 :adult? true}\n      jane {:name \&quot;Jane\&quot; :age  4 :adult? false}\n      people [jeff jane]]\n  (filter :adult? people))\n; harsh-map as dictionary\n(let [nickname {\&quot;Jeffery\&quot; \&quot;Jeff\&quot;\n                \&quot;Jessica\&quot; \&quot;Jess\&quot;}]\n  (map nickname [\&quot;Jeffery\&quot; \&quot;Jessica\&quot; \&quot;Johann\&quot;]))\n;; anonymous functions\n(#(+ % 1) 2)\n(#(+ % % 1) 2)\n;; anonymous functions with multiple parameters\n(#(+ %1 %2 1) 1 2)&quot;, :offset 2082, :ns &quot;clojure-tutorial.core&quot;} {:command &quot;(vector 1 2 3)&quot;, :offset 14, :ns &quot;clojure-tutorial.core&quot;} {:command &quot;(list 1 2 3)&quot;, :offset 12, :ns &quot;clojure-tutorial.core&quot;} {:command &quot;#(+ % 5)&quot;, :offset 8, :ns &quot;clojure-tutorial.core&quot;} {:command &quot;(#(+ % 5) 3)&quot;, :offset 12, :ns &quot;clojure-tutorial.core&quot;} {:command &quot;(list #(+ % 5))&quot;, :offset 15, :ns &quot;clojure-tutorial.core&quot;} {:command &quot;{:foo 1 :bar 2}&quot;, :offset 15, :ns &quot;clojure-tutorial.core&quot;} {:command &quot;(keys {:foo 1 :bar 2})&quot;, :offset 22, :ns &quot;clojure-tutorial.core&quot;} {:command &quot;(vals {:foo 1 :bar 2})&quot;, :offset 22, :ns &quot;clojure-tutorial.core&quot;} {:command &quot;(conj {:foobar 3} {:foo 1 :bar 2})&quot;, :offset 34, :ns &quot;clojure-tutorial.core&quot;} {:command &quot;(let [jeff {:name \&quot;Jeff\&quot; :age 37 :adult? true}\n      jane {:name \&quot;Jane\&quot; :age  4 :adult? false}\n      people [jeff jane]]\n  (filter :adult? people))&quot;, :offset 147, :ns &quot;clojure-tutorial.core&quot;} {:command &quot;(format t \&quot;hello, world\&quot;)&quot;, :offset 25, :ns &quot;clojure-tutorial.core&quot;} {:command &quot;(format #t \&quot;hello, world\&quot;)&quot;, :offset 26, :ns &quot;clojure-tutorial.core&quot;} {:command &quot;(format 't' \&quot;hello, world\&quot;)&quot;, :offset 27, :ns &quot;clojure-tutorial.core&quot;} {:command &quot;(format \&quot;hello, world\&quot;)&quot;, :offset 23, :ns &quot;clojure-tutorial.core&quot;} {:command &quot;(defn hello-world [] (print \&quot;hello world\&quot;))&quot;, :offset 43, :ns &quot;clojure-tutorial.core&quot;} {:command &quot;(println \&quot;helloexpr\&quot;)&quot;, :offset 21, :ns &quot;clojure-tutorial.core&quot;} {:command &quot;(defn hello-world [] (println \&quot;hello world\&quot;))&quot;, :offset 45, :ns &quot;clojure-tutorial.core&quot;} {:command &quot;(hello-world)&quot;, :offset 13, :ns &quot;clojure-tutorial.core&quot;} {:command &quot;remove-if&quot;, :offset 9, :ns &quot;clojure-tutorial.core&quot;} {:command &quot;(remove #(= 0 (mod % 2)) '(1 2 3 4 5 6 7 8 9))&quot;, :offset 46, :ns &quot;clojure-tutorial.core&quot;} {:command &quot;(remove-if-not #(= 0 (mod % 2)) '(1 2 3 4 5 6 7 8 9))&quot;, :offset 53, :ns &quot;clojure-tutorial.core&quot;} {:command &quot;(remove #(= 1 (mod % 2)) '(1 2 3 4 5 6 7 8 9))&quot;, :offset 46, :ns &quot;clojure-tutorial.core&quot;} {:command &quot;not&quot;, :offset 3, :ns &quot;clojure-tutorial.core&quot;} {:command &quot;(remove #(not (= 1 (mod % 2)))  '(1 2 3 4 5 6 7 8 9))&quot;, :offset 53, :ns &quot;clojure-tutorial.core&quot;} {:command &quot;(force \&quot;kjhkhjkh\&quot;)&quot;, :offset 18, :ns &quot;clojure-tutorial.core&quot;} {:command &quot;(read-line *query-io*)&quot;, :offset 22, :ns &quot;clojure-tutorial.core&quot;} {:command &quot;(defvar *query-io*)&quot;, :offset 19, :ns &quot;clojure-tutorial.core&quot;} {:command &quot;def&quot;, :offset 3, :ns &quot;clojure-tutorial.core&quot;} {:command &quot;(def h 0)&quot;, :offset 9, :ns &quot;clojure-tutorial.core&quot;}], :remote []}}</component>
+  <component name="RunManager">
+    <configuration name="REPL for clojure-tutorial" type="ClojureREPL" factoryName="Local" activateToolWindowBeforeRun="false" temporary="true">
+      <module name="clojure-tutorial" />
+      <setting name="replType" value="NREPL" />
+      <setting name="execution" value="LEININGEN" />
+      <setting name="jvmArgs" value="" />
+      <setting name="parameters" value="" />
+      <setting name="workingDir" value="$PROJECT_DIR$" />
+      <setting name="profiles" value="" />
+      <setting name="aliases" value="" />
+      <setting name="fixLineNumbers" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="ClojureREPL" factoryName="Local" activateToolWindowBeforeRun="false">
+      <setting name="replType" value="NREPL" />
+      <setting name="execution" value="LEININGEN" />
+      <setting name="jvmArgs" value="" />
+      <setting name="parameters" value="" />
+      <setting name="workingDir" value="" />
+      <setting name="profiles" value="" />
+      <setting name="aliases" value="" />
+      <setting name="fixLineNumbers" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="ClojureREPL" factoryName="Remote" activateToolWindowBeforeRun="false">
+      <setting name="host" value="" />
+      <setting name="port" value="0" />
+      <setting name="replType" value="SOCKET" />
+      <setting name="configType" value="SPECIFY" />
+      <setting name="replPortFileType" value="STANDARD" />
+      <setting name="customPortFile" value="" />
+      <setting name="fixLineNumbers" value="false" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Clojure REPL.REPL for clojure-tutorial" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8028bac0-3cea-496c-930a-4584d0bfd57b" name="Default Changelist" comment="" />
+      <created>1589028050257</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1589028050257</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2765" y="383" key="#Notifications" timestamp="1589197442370">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2765" y="383" key="#Notifications/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1589197442370" />
+    <state x="2472" y="161" key="#Plugins" timestamp="1591525979737">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2472" y="161" key="#Plugins/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1591525979737" />
+    <state x="2560" y="256" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1591525846823">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2560" y="256" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1591525846823" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1589471748768">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1589471748768" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1589471748768">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1589471748768" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1589471748768">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1589471748768" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1589471748768">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1589471748768" />
+    <state x="2460" y="263" key="IDE.errors.dialog" timestamp="1591526058123">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2460" y="263" key="IDE.errors.dialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1591526058123" />
+    <state x="2262" y="203" key="new project wizard" timestamp="1592050864742">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="342" y="203" key="new project wizard/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1590581990285" />
+    <state x="2262" y="203" key="new project wizard/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1592050864742" />
+    <state x="2543" y="225" key="search.everywhere.popup" timestamp="1592048639310">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2543" y="225" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1592048639310" />
+  </component>
+</project>
